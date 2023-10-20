@@ -1,0 +1,13 @@
+- name: install Nagios(Ubuntu)
+  apt:
+    name:
+      - nagios4
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: install Nagios(CentOS)
+  yum:
+    name: 
+      - nagios
+    state: latest
+  when: ansible_distribution == "CentOS"
